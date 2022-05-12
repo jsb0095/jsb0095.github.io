@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Hello World!!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <title>coreta</title>
   
 <!--
 Template 2109 The Card
@@ -21,7 +21,21 @@ http://www.tooplate.com/view/2109-the-card
   <link rel="stylesheet" href="css/magnific-popup.css">
   <link rel="stylesheet" href="css/tooplate-style.css">
   <!-- Templatemo style -->
+  <script>
+  function printTime(){
+    var clock= document.getElementById("clock");
+    var now = new Date();
+    var nowH=('0'+now.getHours()).slice(-2);
+    var nowM=('0'+now.getMinutes()).slice(-2);
+    var nowS=('0'+now.getSeconds()).slice(-2);
+    var nowTime= nowH+":"+nowM+":"+nowS
+    clock.innerHTML=nowTime;
+    console.log=clock.innerHTML=nowTime;
+    setTimeout("printTime()",1000);
+  }
+  
 
+</script>
 </head>
 
 <body>
@@ -35,21 +49,24 @@ http://www.tooplate.com/view/2109-the-card
   <div class="tm-main-container">
 
     <div class="tm-top-container">
-      <!-- Menu -->
+      <!-- 나만의 Menu 추가해보기 tooplate style css참고-->
       <nav id="tmNav" class="tm-nav">
         <a class="tm-navbar-menu" href="#">Menu</a>
         <ul class="tm-nav-links">
           <li class="tm-nav-item active">
-            <a href="#" data-linkid="0" data-align="right" class="tm-nav-link">로그인</a>
+            <a href="#" data-linkid="0" data-align="right" class="tm-nav-link">LogIn</a>
           </li>
           <li class="tm-nav-item">
-            <a href="#" data-linkid="3" data-align="left" class="tm-nav-link">회원가입</a>
+            <a href="#" data-linkid="3" data-align="left" class="tm-nav-link">Sign</a>
           </li>
           <li class="tm-nav-item">
-            <a href="#" data-linkid="1" data-align="right" class="tm-nav-link">소개</a>
+            <a href="#" data-linkid="1" data-align="right" class="tm-nav-link">Introduce</a>
           </li>
           <li class="tm-nav-item">
-            <a href="#" data-linkid="2" data-align="middle" class="tm-nav-link">프로젝트</a>
+            <a href="#" data-linkid="2" data-align="middle" class="tm-nav-link">Project</a>
+          </li>
+          <li class="tm-nav-item">
+            <a href="#" data-linkid="4" data-align="middle" class="tm-nav-link">create</a>
           </li>
           
         </ul>
@@ -57,8 +74,9 @@ http://www.tooplate.com/view/2109-the-card
 
       <!-- Site header -->
       <header class="tm-site-header-box tm-bg-dark">
-        <h1 class="tm-site-title">금요일 pm4시까지</h1>
-        <p class="mb-0 tm-site-subtitle"> 비밀번호 정규식 체크 아이디숫자 필수입력 이메일  onblur@체크match,select option </p>
+        <p class="mb-0 tm-site-subtitle">Now Time</p>
+        <h1 id="clock"  class="tm-site-title"></h1>
+        
       </header>
     </div>
     <!-- tm-top-container -->
@@ -71,11 +89,12 @@ http://www.tooplate.com/view/2109-the-card
 
             <!-- Section 0 Introduction -->
             <section class="tm-section tm-section-0">
-              <h2 class="tm-section-title mb-3 font-weight-bold">로그인</h2>
+              <h2 class="tm-section-title mb-3 font-weight-bold">Log In</h2>
               <div class="tm-textbox tm-bg-dark">
-                <p>ID:</p><input id=loginId type="text" onblur="cheak()" maxlength="20" minlength="5">
-              
-                <p>Password:</p><input  type="password"onblur="cheak()"  id="loginPassword" >
+                <p>ID:</p><input id=loginId type="text">
+                <p></p>
+                <p>Password:</p><input  type="password" id="loginPassword" >
+                <P id="clCheck"></P>
                
               </div>
               <a href="#" class="tm-link">Log in</a>
@@ -85,8 +104,8 @@ http://www.tooplate.com/view/2109-the-card
             <section class="tm-section tm-section-1">
               <div class="tm-textbox tm-textbox-2 tm-bg-dark">
                 <h2 class="tm-text-blue mb-4">나의 소개내용</h2>
-                <p class="mb-4">내용</p>
-                <p class="mb-0">내용</p>
+                <p class="mb-4">안녕하세요 28살 jsb입니다</p>
+                <p class="mb-0"></p>
               </div>
             </section>
 
@@ -96,10 +115,10 @@ http://www.tooplate.com/view/2109-the-card
                 <figure class="effect-goliath tm-gallery-item">
                   <img src="img/01.jpg" alt="Image 1" class="">
                   <figcaption>
-                    <h2>Thoughtful
+                    <h2>가위바위보게임
                       <span>Goliath</span>
                     </h2>
-                    <p>When Goliath comes out, you should run.</p>
+                    <p> 사진 대신에 프로잭트 코드</p>
                     <a href="img/01.jpg">View more</a>
                   </figcaption>
                 </figure>
@@ -215,22 +234,28 @@ http://www.tooplate.com/view/2109-the-card
                 </figure>
               </div>
             </section>
-
+            
             <!-- Section 3 Contact -->
             <section class="tm-section tm-section-3 tm-section-left">
               <form action="" class="tm-contact-form" method="post">
-                <div class="form-group mb-4"style="color:black; ">
-                    <h6>아이디:</h6><input id="id1" type="text" onblur="cheak()">
+                <div class="form-group mb-5"style="color:black; ">
+                    <h3>Sign</h3>
+                    <h6>ID:</h6><input id="id1" type="text" onblur="idCheck()"> 
                     <h6 id="text1"></h6>
-                    <h6>비밀번호:</h6><input id="pass1" type="password" onblur="passCheak()">
+                    <h6>Password:</h6><input id="pass1" type="password" onblur="passCheck()">
                     <h6 id="text2"></h6>
-                    <h6>비밀번호 재확인:</h6><input  type="password" id=pass2 onblur="passCheak()"  >
+                    <h6>Password Check:</h6><input  type="password" id=pass2 onblur="passCheck()"  >
                     <h6 id="text3"></h6>
-                    <h6>이름:</h6><input id=name type="text">
-                    <h6>생년월일:</h6><input id=birthday type="date">
-                    <h6>이메일:</h6><input id=email1 type="email">
-                    <h6>휴대전화번호:</h6><input id=phonenum type="text" onblur="phoneCheak()">
+                    <h6>Name:</h6><input id=name type="text">
+                    <h6></h6>
+                    <h6>birthday:</h6><input id=birthday1 type="text" onblur="birthday()"> <i id="smile" class="bi bi-emoji-laughing"></i>
+                    <h6 id="birthdayCheck"></h6>
+                    <h6>Email:</h6><input id=email1 type="email">
+                    <h6></h6>
+                    <h6>MobileNumber:</h6><input id=phonenum type="text" onblur="phoneCheck()">
                     <h6 id="phoneresult"></h6>
+                    <h6>Gender:</h6><select name="gender" id="man"><option value="male">male</option><option value="female">female</option></select>
+                    <h6></h6> 
                 </div>
                 <div class="form-group mb-0">
                   <button type="submit" class="btn tm-send-btn tm-fl-right">Send</button>
@@ -258,11 +283,25 @@ http://www.tooplate.com/view/2109-the-card
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script>
     //script 안에 jquery문법이 존재하는지 확인후 jquery문법상단에 사용
-  function passCheak(onblur){
+    function idCheck(onblur){
+      let id1=document.getElementById("id1").value;
+      let text1=document.getElementById("text1");
+      const exp=/^[A-Za-z0-9]{4,15}$/;
+      if(id1.match(exp)){
+        text1.style.color="green"
+        text1.innerHTML="👏👏👏👏👏👏👏👏👏"
+      }else{
+        text1.style.color="red"
+        text1.innerHTML="4~15개 자릿수 아이디를 입력해주세요"
+      }
+    }
+
+  function passCheck(onblur){
         let pass1=document.getElementById("pass1").value;
         let pass2=document.getElementById("pass2").value;//input 창에 입력값이 value
         let text3=document.getElementById("text3");
-   
+        let text2=document.getElementById("text2");
+        let exp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!#$])[A-Za-z\d-_!#$]{5,20}$/;
   
    if(pass1==pass2){
         text3.style.color="green"
@@ -271,35 +310,51 @@ http://www.tooplate.com/view/2109-the-card
         text3.style.color="red"
         text3.innerHTML="비밀번호가 다릅니다"
       }
-   }
-    function cheak(onblur){
-      let pass1 =document.getElementById("pass1").value;
-      let text2=document.getElementById("text2");
-      let exp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!#$])[A-Za-z\d-_!#$]{5,10}$/;
       if(pass1.match(exp))
       { 
         text2.style.color="green"
         text2.innerHTML="멋진 비밀번호!!"
       }else{
         text2.style.color="red"
-        text2.innerHTML="영어(소,대)문자,숫자,특수문자:-_!#$를 사용해주세요"
+        text2.innerHTML="영어(대,소)문자,숫자,특수문자:(-)(_)(!)(#)($)를 필수입력"
       }
-    }
-      function phoneCheak(onblur){
+   }
+   
+      function phoneCheck(onblur){
         const phonenum=document.getElementById("phonenum").value;
         const phoneresult=document.getElementById("phoneresult");
         const exp=/^\d{3}-\d{4}-\d{4}$/;
         if(phonenum.match(exp))
         {
           phoneresult.style.color="green"
-          phoneresult.innerHTML="일치"
+          phoneresult.innerHTML="멋져요"
         }else
         {
           phoneresult.style.color="red"
           phoneresult.innerHTML="ex)010-1234-1234형태로 입력해주세요"
         }
       }
-   
+
+          //       id 이름과 function 이름을 겹치지 않게 바꿔줬더니 바로 작동이 되었다.
+          // 이름은 명확하게, 겹치지 않게 적어주자.
+
+      function birthday() {
+        const birthday1=document.getElementById("birthday1").value;
+        const birthdayCheck=document.getElementById("birthdayCheck");
+        const smile=document.getElementById("smile");
+        const exp=/^\d{4}-\d{2}-\d{2}$/;
+        if(birthday1.match(exp)){
+          smile.style.color="green";
+          birthdayCheck.style.color="green"
+          birthdayCheck.innerHTML="좋아요"
+        }else{
+          smile.style.color="red";
+          birthdayCheck.style.color="red"
+          birthdayCheck.innerHTML="1995-08-09 형식으로 입력해주세요";
+        }
+
+
+    }
     let slickInitDone = false;
     let previousImageId = 0,
       currentImageId = 0;
@@ -310,7 +365,11 @@ http://www.tooplate.com/view/2109-the-card
 
     window.onload = function () {
       $('body').addClass('loaded');
+      printTime();
     }
+
+   
+
 
     function navLinkClick(e) {
       e.preventDefault();
@@ -351,9 +410,10 @@ http://www.tooplate.com/view/2109-the-card
       bgCycle = $("body").backgroundCycle({
         imageUrls: [
           'img/photo-02.jpg',
-          'img/photo-03.jpg',
+          'img/beach-g714f11ff4_1920.jpg',
           'img/photo-04.jpg',
-          'img/photo-05.jpg'
+          'img/photo-05.jpg',
+          'img/photo-03.jpg',
         ],
         fadeSpeed: 2000,
         duration: -1,
