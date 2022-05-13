@@ -88,6 +88,13 @@ a {
   padding: 40px 80px 40px 40px;
   margin: 40px 40px 100px;
 }
+.tm-site-header-box-2 {
+  display: block;
+  margin: 40px 40px 100px;
+  width: 90%;
+  height: 79%;
+}
+
 
 .tm-site-title {
   font-size: 3.6rem;
